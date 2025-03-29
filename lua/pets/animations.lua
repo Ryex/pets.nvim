@@ -41,7 +41,9 @@ function M.Animation.new(sourcedir, type, style, popup, user_opts, state)
     for _, action in pairs(instance.actions) do
         local current_frames = {}
         for _, file in pairs(listdir(sourcedir .. action)) do
-            local image = require("hologram.image"):new(sourcedir .. action .. "/" .. file)
+            local image = require("image").from_file(sourcedir .. action .. "/" .. file, {
+                buffer = instance.popup,
+            })
             table.insert(current_frames, image)
         end
         instance.frames[action] = current_frames
@@ -105,7 +107,7 @@ end
 
 function M.Animation:stop()
     if self.current_image then
-        self.current_image:delete(0, { free = false })
+        self.current_image:clear(true)
     end
     self:stop_timer()
 end
@@ -120,7 +122,7 @@ function M.Animation:next_frame()
     if not self.current_image then
         self.frame_counter = 1
     else
-        self.current_image:delete(0, { free = false })
+        self.current_image:clear(true)
     end
     if self.frame_counter > #self.frames[self.current_action] then -- what to do when current frames end
         self.repetitions = self.repetitions + 1
@@ -138,14 +140,14 @@ function M.Animation:next_frame()
     -- the frames table contains the images for every action
     local image = self.frames[self.current_action][self.frame_counter]
     M.Animation.set_next_col(self)
-    local ok = pcall(image.display, image, self.row, self.col, self.popup.bufnr, {})
+    local ok = pcall(image.render, image, { x = self.col, y = self.row })
     if not ok then
         self:stop()
         if self.popup then
             self.popup:unmount()
         end
         if self.current_image then
-            self.current_image:delete()
+            self.current_image:clear(true)
         end
         if not self.hidden then
             self.popup:mount()
@@ -249,7 +251,7 @@ function M.Animation:set_state(new_state)
         if self.state.hidden then
             self:stop_timer()
             if self.current_image then
-                self.current_image:delete(0, { free = false })
+                self.current_image:clear(true)
             end
             self.popup:unmount()
         else
@@ -261,7 +263,7 @@ function M.Animation:set_state(new_state)
             self:stop_timer()
         else
             if self.current_image then
-                self.current_image:delete(0, { free = false })
+                self.current_image:clear(true)
             end
             self:start()
         end

@@ -1,0 +1,95 @@
+return {
+  next_actions = {
+    stand = {
+      "stand",
+      "stand_left",
+      "sweeping",
+      "sweeping_left",
+      "trot blink",
+      "trot blink_left",
+      "sit",
+      "sit_left",
+      "sleep",
+      "sleep_left",
+    },
+    stand_left = {
+      "stand",
+      "stand_left",
+      "sweeping",
+      "sweeping_left",
+      "trot blink",
+      "trot blink_left",
+      "sit",
+      "sit_left",
+      "sleep",
+      "sleep_left",
+    },
+    sweeping = {
+      "stand",
+      "stand_left",
+    },
+    sweeping_left = {
+      "stand",
+      "stand_left",
+    },
+    trot = {},
+    trot_left = {},
+    ["trot blink"] = {
+      "stand",
+      "stand_left",
+    },
+    ["trot blink_left"] = {
+      "stand",
+      "stand_left",
+    },
+    sit = {
+      "stand",
+      "stand_left",
+    },
+    sit_left = {
+      "stand",
+      "stand_left",
+    },
+    sleep = {
+      "stand",
+      "stand_left",
+      "sit",
+    },
+    sleep_left = {
+      "stand",
+      "stand_left",
+      "sit",
+    },
+  },
+  idle_actions = {
+    "stand",
+    "stand_left",
+    "sweeping",
+    "sweeping_left",
+    "trot blink",
+    "trot blink_left",
+    "sit",
+    "sit_left",
+    "sleep",
+    "sleep_left",
+  },
+  first_action = "stand",
+  movements = {
+    right = {
+      normal = {},
+      fast = {
+        "gallop",
+      },
+      slow = {},
+    },
+    left = {
+      normal = {
+        "gallop_left",
+      },
+      fast = {
+        "gallop_left",
+      },
+      slow = {},
+    },
+  },
+}

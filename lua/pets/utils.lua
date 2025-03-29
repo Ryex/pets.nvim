@@ -16,7 +16,9 @@ function M.listdir(path)
     return sol
 end
 
-local wd = debug.getinfo(1).source:sub(2):match("(.*nvim/)") .. "media/"
+local wd = (
+    debug.getinfo(1).source:sub(2):match("(.*nvim/)") or debug.getinfo(1).source:sub(2):match("(.*/)lua/pets/utils.lua")
+) .. "media/"
 for _, pet in pairs(M.listdir(wd)) do
     local styles = M.listdir(wd .. pet)
     M.available_pets[pet] = styles

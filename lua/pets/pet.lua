@@ -17,7 +17,10 @@ function M.Pet.new(name, type, style, user_opts, state)
     instance.state = state
     instance.popup_opts = user_opts.popup
 
-    local wd = debug.getinfo(1).source:sub(2):match("(.*nvim/)") .. "media/"
+    local wd = (
+        debug.getinfo(1).source:sub(2):match("(.*nvim/)")
+        or debug.getinfo(1).source:sub(2):match("(.*/)lua/pets/pet.lua")
+    ) .. "media/"
     instance.sourcedir = wd .. type .. "/" .. style .. "/"
 
     instance.popup = require("nui.popup")(user_opts.popup)

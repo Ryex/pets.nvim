@@ -1,0 +1,173 @@
+return {
+  next_actions = {
+    stand = {
+      "stand",
+      "stand_left",
+      "hover",
+      "hover_left",
+      "hover2",
+      "hover2_left",
+      "fly",
+      "fly_left",
+      "fly2",
+      "fly2_left",
+      "breezie_start",
+      "breezie_start_left",
+      "breezie1",
+      "breezie1_left",
+      "breezie2",
+      "breezie2_left",
+      "breezie3",
+      "breezie3_left",
+      "breezie4",
+      "breezie4_left",
+    },
+    stand_left = {
+      "stand",
+      "stand_left",
+      "hover",
+      "hover_left",
+      "hover2",
+      "hover2_left",
+      "fly",
+      "fly_left",
+      "fly2",
+      "fly2_left",
+      "breezie_start",
+      "breezie_start_left",
+      "breezie1",
+      "breezie1_left",
+      "breezie2",
+      "breezie2_left",
+      "breezie3",
+      "breezie3_left",
+      "breezie4",
+      "breezie4_left",
+    },
+    hover = {
+      "stand",
+      "stand_left",
+    },
+    hover_left = {
+      "stand",
+      "stand_left",
+    },
+    hover2 = {
+      "stand",
+      "stand_left",
+    },
+    hover2_left = {
+      "stand",
+      "stand_left",
+    },
+    fly = {
+      "stand",
+      "stand_left",
+    },
+    fly_left = {
+      "stand",
+      "stand_left",
+    },
+    fly2 = {
+      "stand",
+      "stand_left",
+    },
+    fly2_left = {
+      "stand",
+      "stand_left",
+    },
+    breezie_start = {
+      "stand",
+      "stand_left",
+      "breezie1",
+    },
+    breezie_start_left = {
+      "stand",
+      "stand_left",
+      "breezie1",
+    },
+    breezie1 = {
+      "stand",
+      "stand_left",
+      "breezie2",
+    },
+    breezie1_left = {
+      "stand",
+      "stand_left",
+      "breezie2",
+    },
+    breezie2 = {
+      "stand",
+      "stand_left",
+      "breezie3",
+    },
+    breezie2_left = {
+      "stand",
+      "stand_left",
+      "breezie3",
+    },
+    breezie3 = {
+      "stand",
+      "stand_left",
+      "breezie4",
+    },
+    breezie3_left = {
+      "stand",
+      "stand_left",
+      "breezie4",
+    },
+    breezie4 = {
+      "stand",
+      "stand_left",
+    },
+    breezie4_left = {
+      "stand",
+      "stand_left",
+    },
+  },
+  idle_actions = {
+    "stand",
+    "stand_left",
+    "hover",
+    "hover_left",
+    "hover2",
+    "hover2_left",
+    "fly2",
+    "fly2_left",
+    "breezie_start",
+    "breezie_start_left",
+    "breezie1",
+    "breezie1_left",
+    "breezie2",
+    "breezie2_left",
+    "breezie3",
+    "breezie3_left",
+    "breezie4",
+    "breezie4_left",
+  },
+  first_action = "stand",
+  movements = {
+    right = {
+      normal = {
+        "fly",
+      },
+      fast = {
+        "fly",
+      },
+      slow = {
+        "fly",
+      },
+    },
+    left = {
+      normal = {
+        "fly_left",
+      },
+      fast = {
+        "fly_left",
+      },
+      slow = {
+        "fly_left",
+      },
+    },
+  },
+}
